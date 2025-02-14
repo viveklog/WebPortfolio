@@ -887,3 +887,23 @@ section.active {
         font-size: 3.5rem;
     }
 }
+
+.custom-icon {
+    display: inline-flex; /* Aligns like Boxicons */
+    align-items: center;
+    justify-content: center;
+    width: 24px; /* Same size as Boxicons */
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Specific icons */
+.leetcode-icon {
+    background-image: url('assets/leetcode.svg'); /* Ensure the correct path */
+}
+
+.hackerrank-icon {
+    background-image: url('./assets.hackerrank.svg');
+}
