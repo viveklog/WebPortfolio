@@ -116,3 +116,32 @@ arrowLeft.addEventListener('click', ()=> {
     }
     activePortfolio();
 });
+
+
+
+
+const btn = document.getElementById('submitButton');
+
+document.getElementById('contact-form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+//    btn.value = 'Sending...';
+   btn.textContent = "Sending...";
+
+   const serviceID = 'default_service';
+   const templateID = 'template_xgbv7vb';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+        this.reset();
+        btn.textContent = "Send Message";
+    //   alert('Sent!');
+      setTimeout(() => {
+        alert('Sent!');
+    }, 100); 
+    }, (err) => {
+        btn.textContent = "Send Message";
+      alert(JSON.stringify(err));
+    });
+});
